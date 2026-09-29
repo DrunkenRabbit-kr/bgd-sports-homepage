@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b25">
+  <meta name="description" content="BGD SPORTS 야구장 시공·보수·관리 홈페이지 메인 시안">
+  <title>BGD SPORTS | 경기장의 완성도는 그라운드에서 시작됩니다</title>
+  <style>
+    :root {
+      --ink: #14241f;
+      --green: #173c31;
+      --green-2: #285844;
+      --lime: #c7d77b;
+      --sand: #f3f1e9;
+      --paper: #faf9f5;
+      --rust: #a86e45;
+      --muted: #6d7770;
+      --line: rgba(20, 36, 31, .13);
+      --serif: Georgia, "Times New Roman", "AppleMyungjo", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1180px, calc(100% - 64px)); margin: 0 auto; }
+    .topline { height: 34px; background: var(--green); color: rgba(255,255,255,.76); font-size: 10px; letter-spacing: .18em; display:flex; align-items:center; }
+    .topline .wrap { display:flex; justify-content:space-between; }
+    header { background: var(--paper); border-bottom: 1px solid var(--line); }
+    .nav { height: 82px; display:flex; align-items:center; justify-content:space-between; }
+    .brand { display:flex; align-items:center; flex:none; }
+    .brand-logo { display:block; width:184px; max-width:100%; height:auto; object-fit:contain; }
+    .navlinks { display:flex; gap:34px; align-items:center; color:#59645e; font-size:13px; }
+    .navlinks a:hover { color:var(--green-2); }
+    .nav-cta { border:1px solid var(--green); padding:12px 17px; color:var(--green); font-weight:700; font-size:11px; letter-spacing:.04em; }
+    .hero { overflow:hidden; position:relative; min-height:760px; background:#101b16; }
+    .hero:before { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(8,17,14,.89) 0%,rgba(8,17,14,.76) 31%,rgba(8,17,14,.36) 58%,rgba(8,17,14,.04) 100%),linear-gradient(0deg,rgba(8,17,14,.38),transparent 45%),url("bgd_field_sliding_hero_v3.jpg") center 54%/cover no-repeat; }
+    .hero .wrap { min-height:760px; display:flex; align-items:center; position:relative; }
+    .hero-copy { position:relative; z-index:2; width:min(760px,68%); padding:70px 0 72px; color:#fff; }
+    .eyebrow { display:flex; align-items:center; gap:10px; color:#dbe5bd; text-transform:uppercase; letter-spacing:.2em; font-size:12px; font-weight:800; }
+    .eyebrow:before { content:""; width:31px; height:2px; background:#cf9b61; }
+    h1 { font-size:clamp(58px, 5.4vw, 78px); line-height:1.18; letter-spacing:-.075em; margin:29px 0 23px; font-weight:800; }
+    h1 em { color:#d9b17e; font-style:normal; }
+    .hero-desc { max-width:550px; color:rgba(255,255,255,.83); font-size:17px; line-height:1.9; word-break:keep-all; }
+    .hero-actions { display:flex; gap:12px; margin-top:39px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; gap:20px; min-height:56px; padding:0 22px; font-size:13px; font-weight:750; letter-spacing:.02em; }
+    .button-dark { background:#d1dc98; color:#15271f; }
+    .button-line { border:1px solid rgba(255,255,255,.56); color:#fff; background:rgba(10,20,16,.16); }
+    .arrow { font-size:17px; line-height:0; }
+    .hero-meta { display:flex; gap:21px; margin-top:46px; color:rgba(255,255,255,.77); font-size:10px; letter-spacing:.1em; }
+    .hero-meta span { display:flex; align-items:center; gap:7px; }
+    .hero-meta i { width:5px; height:5px; display:inline-block; background:var(--rust); border-radius:50%; }
+    .field-art { display:none; }
+    .field-art:before { content:""; position:absolute; width:430px; height:430px; border-radius:50%; border:1px solid rgba(23,60,49,.14); right:92px; top:25px; }
+    .field-card { width:min(690px, 67vw); height:428px; position:relative; transform:rotate(-5deg); filter:drop-shadow(0 25px 24px rgba(33,52,39,.16)); }
+    .field-card svg { display:block; width:100%; height:100%; }
+    .art-label { position:absolute; z-index:2; right:7%; bottom:4%; width:177px; background:#fbfaf5; padding:16px 18px; box-shadow:0 8px 25px rgba(20,36,31,.12); }
+    .art-label strong { display:block; font:italic 21px var(--serif); letter-spacing:.02em; color:var(--green); }
+    .art-label span { display:block; margin-top:7px; color:var(--muted); font-size:8px; letter-spacing:.16em; }
+    .hero-index { position:absolute; right:0; top:49%; writing-mode:vertical-rl; color:#909891; font:italic 11px var(--serif); letter-spacing:.2em; }
+    .trustbar { background:var(--green); color:white; }
+    .trustbar .wrap { min-height:112px; display:flex; align-items:center; justify-content:space-between; gap:25px; }
+    .trust-intro { color:rgba(255,255,255,.62); font-size:10px; text-transform:uppercase; letter-spacing:.22em; }
+    .trust-item { display:flex; align-items:center; gap:14px; font-size:15px; font-weight:700; }
+    .trust-item b { color:var(--lime); font:italic 25px var(--serif); font-weight:400; }
+    section { padding:124px 0; }
+    .section-head { display:flex; align-items:flex-end; justify-content:space-between; gap:35px; margin-bottom:43px; }
+    .section-kicker { color:var(--rust); font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.23em; }
+    h2 { margin:12px 0 0; font-size:44px; line-height:1.3; letter-spacing:-.065em; }
+    .section-intro { max-width:430px; color:var(--muted); font-size:15px; line-height:1.9; word-break:keep-all; }
+    .services { background:var(--paper); }
+    .service-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:15px; }
+    .service { min-height:390px; padding:0; background:#f0efe9; position:relative; overflow:hidden; }
+    .service-photo { height:190px; position:relative; overflow:hidden; background:#455b48; }
+    .service-photo:after { content:""; position:absolute; inset:45% 0 0; background:linear-gradient(0deg,rgba(9,20,15,.55),transparent); }
+    .service-photo img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+    .service:hover .service-photo img { transform:scale(1.045); }
+    .service-num { position:absolute; z-index:1; top:14px; left:14px; color:#fff; font:italic 12px var(--serif); letter-spacing:.1em; text-shadow:0 1px 8px #000; }
+    .service-copy { padding:19px 20px 22px; }
+    .service h3 { font-size:20px; letter-spacing:-.04em; margin:0 0 9px; }
+    .service p { min-height:48px; color:var(--muted); font-size:13px; line-height:1.85; margin:0; word-break:keep-all; }
+    .service-tag { display:block; color:#879188; font-size:10px; letter-spacing:.12em; margin-top:16px; }
+    .experience { background:#e8e9df; position:relative; overflow:hidden; }
+    .experience:after { content:"BGD"; position:absolute; right:-25px; bottom:-109px; font:italic 290px var(--serif); color:rgba(23,60,49,.035); pointer-events:none; }
+    .experience .wrap { position:relative; z-index:1; }
+    .experience-layout { display:grid; grid-template-columns:.85fr 1.15fr; gap:70px; align-items:center; }
+    .experience-copy h2 { font-size:46px; }
+    .experience-copy p { max-width:430px; margin-top:23px; color:#68736c; font-size:15px; line-height:1.95; word-break:keep-all; }
+    .experience-note { display:flex; gap:13px; align-items:flex-start; margin-top:28px; color:#68736c; font-size:12px; line-height:1.8; }
+    .experience-note b { flex:none; color:var(--green-2); font-size:17px; line-height:1; }
+    .case-stack { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .case { height:360px; min-height:360px; background:var(--green); color:white; padding:0; position:relative; overflow:hidden; }
+    .case:nth-child(2) { margin-top:35px; background:#294c37; color:#fff; }
+    .case:after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,rgba(5,16,12,.88),rgba(5,16,12,.04) 66%); }
+    .case-art { position:absolute; inset:0; opacity:1; }
+    .case-art img { display:block; width:100%; height:100%; object-fit:cover; }
+    .case-text { position:absolute; left:23px; right:18px; bottom:21px; z-index:2; }
+    .case-text span { display:block; font-size:10px; opacity:.74; letter-spacing:.16em; text-transform:uppercase; }
+    .case-text strong { display:block; margin-top:8px; font-size:17px; letter-spacing:-.04em; }
+    .case-no { position:absolute; z-index:2; top:19px; right:19px; color:#fff; font:italic 14px var(--serif); opacity:.8; text-shadow:0 1px 6px #000; }
+    .photo-note { grid-column:1/-1; margin:0; color:#68736c; text-align:right; font-size:10px; line-height:1.7; }
+    .method { background:#fff; }
+    .method .section-head { margin-bottom:54px; }
+    .steps { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:15px; }
+    .step { padding:0; background:#f0efe9; overflow:hidden; }
+    .step-photo { height:180px; position:relative; overflow:hidden; background:#455b48; }
+    .step-photo img { display:block; width:100%; height:100%; object-fit:cover; }
+    .step-no { position:absolute; left:15px; top:15px; color:#fff; font:italic 14px var(--serif); letter-spacing:.12em; text-shadow:0 1px 7px #000; }
+    .step-copy { padding:19px 19px 22px; }
+    .step small { display:block; color:#879188; font-size:9px; letter-spacing:.13em; margin-bottom:8px; }
+    .step h3 { margin:0 0 9px; font-size:19px; letter-spacing:-.04em; }
+    .step p { max-width:250px; color:var(--muted); font-size:13px; line-height:1.8; word-break:keep-all; margin:0; }
+    .cta { padding:0 0 95px; background:#fff; }
+    .cta-box { background:var(--green); color:white; min-height:280px; display:flex; justify-content:space-between; align-items:center; padding:48px 62px; position:relative; overflow:hidden; }
+    .cta-box:after { content:""; width:330px; height:330px; border:1px solid rgba(255,255,255,.1); border-radius:50%; position:absolute; right:150px; top:-180px; box-shadow:0 0 0 30px rgba(255,255,255,.025),0 0 0 60px rgba(255,255,255,.02); }
+    .cta-copy { position:relative; z-index:1; }
+    .cta-copy span { color:var(--lime); font-size:11px; letter-spacing:.22em; text-transform:uppercase; }
+    .cta-copy h2 { margin-top:13px; font-size:38px; }
+    .cta-copy p { color:rgba(255,255,255,.72); font-size:14px; }
+    .cta .button { position:relative; z-index:1; background:var(--lime); color:var(--ink); min-width:165px; }
+    footer { background:#102b25; color:rgba(255,255,255,.72); padding:34px 0; font-size:11px; }
+    .foot { display:flex; justify-content:space-between; align-items:center; gap:20px; }
+    .foot .brand-logo-light { width:150px; }
+    .footnote { color:rgba(255,255,255,.4); letter-spacing:.04em; }
+    @media (max-width: 800px) {
+      .wrap { width:min(100% - 38px, 600px); }
+      .topline .wrap { justify-content:center; }
+      .topline .wrap span:last-child, .navlinks { display:none; }
+      .nav { height:68px; }
+      .brand-logo { width:150px; }
+      .nav-cta { padding:10px 12px; }
+      .hero, .hero .wrap { min-height:700px; }
+      .hero:before { background:linear-gradient(90deg,rgba(8,17,14,.9) 0%,rgba(8,17,14,.68) 52%,rgba(8,17,14,.2) 100%),linear-gradient(0deg,rgba(8,17,14,.5),transparent 55%),url("bgd_field_sliding_hero_v3.jpg") 59% center/cover no-repeat; }
+      .hero .wrap { display:flex; flex-direction:column; align-items:stretch; gap:0; justify-content:center; }
+      .hero-copy { width:100%; padding:55px 0 48px; }
+      h1 { font-size:clamp(40px, 9.5vw, 54px); line-height:1.2; }
+      .hero-desc { max-width:460px; font-size:15px; }
+      .hero-actions { flex-wrap:wrap; margin-top:28px; }
+      .hero-meta { margin-top:32px; font-size:9px; }
+      .field-art { display:none; }
+      .trustbar .wrap { min-height:unset; padding:20px 0; display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+      .trust-intro { grid-column:1/-1; }
+      .trust-item { font-size:12px; }
+      .trust-item b { font-size:21px; }
+      section { padding:82px 0; }
+      .section-head { display:block; margin-bottom:28px; }
+      h2 { font-size:34px; }
+      .section-intro { margin-top:16px; font-size:14px; }
+      .service-grid { grid-template-columns:1fr 1fr; }
+      .service { min-height:320px; padding:0; }
+      .service-photo { height:137px; }
+      .service-copy { padding:14px 13px 17px; }
+      .service h3 { font-size:17px; }
+      .service p { min-height:55px; font-size:12px; }
+      .service-tag { font-size:8px; margin-top:12px; }
+      .experience-layout { display:block; }
+      .experience-copy h2 { font-size:36px; }
+      .experience-copy p { font-size:14px; }
+      .case-stack { margin-top:32px; gap:9px; }
+      .case { height:220px; min-height:220px; padding:13px; }
+      .case-text { left:13px; bottom:13px; }
+      .case-text strong { font-size:14px; }
+      .photo-note { text-align:left; font-size:9px; }
+      .steps { grid-template-columns:1fr 1fr; row-gap:12px; }
+      .step-photo { height:135px; }
+      .step-copy { padding:14px 13px 16px; }
+      .step h3 { font-size:17px; }
+      .step p { font-size:12px; }
+      .cta { padding-bottom:55px; }
+      .cta-box { display:block; padding:34px 25px; min-height:unset; }
+      .cta-copy h2 { font-size:29px; }
+      .cta-copy p { font-size:13px; line-height:1.7; }
+      .cta .button { margin-top:15px; }
+      .foot { align-items:flex-start; flex-direction:column; }
+    }
+    @media print {
+      @page { size: A4; margin: 12mm; }
+      body { print-color-adjust:exact; -webkit-print-color-adjust:exact; }
+      .wrap { width:100%; }
+      .topline { height:25px; }
+      .nav { height:58px; }
+      .brand-logo { width:146px; }
+      .foot .brand-logo-light { width:132px; }
+      .navlinks { gap:14px; font-size:9px; }
+      .nav-cta { display:none; }
+      .hero, .hero .wrap { min-height:550px; }
+      .hero-copy { padding:18px 0; }
+      h1 { font-size:55px; margin:24px 0 18px; }
+      .hero-desc { font-size:13px; }
+      .hero-actions { margin-top:25px; }
+      .hero-meta { margin-top:29px; }
+      .trustbar .wrap { min-height:60px; }
+      section { padding:48px 0; }
+      .section-head { margin-bottom:25px; }
+      h2 { font-size:26px; }
+      .section-intro, .experience-copy p { font-size:9px; }
+      .service { min-height:190px; padding:14px; }
+      .service-icon { margin:16px 0; }
+      .experience-layout { gap:30px; }
+      .experience-copy h2 { font-size:28px; }
+      .case { height:220px; min-height:220px; }
+      .step-photo { height:135px; }
+      .cta { padding-bottom:45px; }
+      .cta-box { min-height:170px; padding:30px 40px; }
+      footer { padding:22px 0; }
+      a { text-decoration:none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline"><div class="wrap"><span>SPORTS FIELD CONSTRUCTION · CARE</span><span>BUILT FOR THE GAME</span></div></div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="BGD SPORTS 홈">
+        <img class="brand-logo" src="bgd_logo.png" alt="BGD SPORTS">
+      </a>
+      <nav class="navlinks" aria-label="주요 메뉴"><a href="#services">사업분야</a><a href="#experience">시공·관리 경험</a><a href="#method">진행과정</a><a href="#contact">문의</a></nav>
+      <a class="nav-cta" href="#contact">상담 문의 <span class="arrow">↗</span></a>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-copy">
+          <div class="eyebrow">Baseball field specialists</div>
+          <h1>경기장의 완성도는<br><em>그라운드에서</em><br>결정됩니다.</h1>
+          <p class="hero-desc">야구장 시공 · 보수 · 유지관리.<br>경기가 시작되는 바닥부터 다릅니다.</p>
+          <div class="hero-actions"><a class="button button-dark" href="#services">사업 분야 보기 <span class="arrow">↘</span></a><a class="button button-line" href="#contact">견적 상담 문의</a></div>
+          <div class="hero-meta"><span><i></i> BASEBALL FIELD</span><span><i></i> BUILD · REPAIR · CARE</span></div>
+        </div>
+        <div class="field-art" aria-label="야구장 그라운드 그래픽">
+          <div class="field-card">
+            <svg viewBox="0 0 740 480" role="img" aria-label="야구장 다이아몬드 일러스트">
+              <defs><linearGradient id="grass" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#355e43"/><stop offset="1" stop-color="#173c31"/></linearGradient><pattern id="mow" width="36" height="36" patternUnits="userSpaceOnUse" patternTransform="rotate(34)"><rect width="18" height="36" fill="#ffffff" opacity=".035"/></pattern></defs>
+              <rect width="740" height="480" rx="3" fill="#e7e2d4"/><path d="M44 38h652v404H44z" fill="url(#grass)"/><path d="M44 38h652v404H44z" fill="url(#mow)"/>
+              <path d="M370 92 601 323 370 416 139 323Z" fill="#a77852"/><path d="M370 115 577 323 370 399 163 323Z" fill="#b88a62"/>
+              <path d="M370 92 601 323M370 92 139 323M139 323 370 416M601 323 370 416" fill="none" stroke="#f4f0e4" stroke-width="3" opacity=".88"/>
+              <path d="M370 146 548 323M370 146 192 323M192 323 370 395M548 323 370 395" fill="none" stroke="#f2eee3" stroke-width="2" opacity=".45"/>
+              <path d="M345 92h50l-25 23Z" fill="#f4f0e4"/><path d="M360 323h20v20h-20z" fill="#f5f1e8"/><path d="m370 120 17 17-17 17-17-17z" fill="#f5f1e8"/><path d="m192 314 9 9-9 9-9-9zM548 314l9 9-9 9-9-9z" fill="#f5f1e8"/>
+              <path d="M90 80c90-45 180-42 280 3M410 83c100-42 177-34 253 1" fill="none" stroke="#a2bb73" stroke-width="1" opacity=".6"/>
+              <g fill="#d0dc97" opacity=".9"><circle cx="93" cy="87" r="3"/><circle cx="639" cy="83" r="3"/><circle cx="366" cy="78" r="3"/></g>
+              <text x="66" y="430" font-family="Georgia,serif" font-size="10" letter-spacing="4" fill="#ffffff" opacity=".65">A FIELD MADE READY</text>
+            </svg>
+          </div>
+          <div class="art-label"><strong>Ready for play.</strong><span>GROUND · GRASS · CARE</span></div>
+          <div class="hero-index">01 — BUILT AROUND THE GAME</div>
+        </div>
+      </div>
+    </section>
+    <div class="trustbar"><div class="wrap"><span class="trust-intro">What we bring to every field</span><span class="trust-item"><b>01</b> 현장 진단</span><span class="trust-item"><b>02</b> 목적에 맞는 시공</span><span class="trust-item"><b>03</b> 지속적인 유지관리</span></div></div>
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="section-head"><div><div class="section-kicker">Our capabilities</div><h2>야구장에 필요한 일을<br>한 곳에서 연결합니다.</h2></div><p class="section-intro">부지와 사용 환경을 살펴 필요한 공정과 관리 범위를 함께 정합니다. 작은 보수부터 신규 시공까지 현장에 맞춰 진행합니다.</p></div>
+        <div class="service-grid">
+          <article class="service"><div class="service-photo"><img src="bgd_photo_school_field.jpg" alt="흙과 천연잔디가 정돈된 학교 야구장"><span class="service-num">01 / FIELD BUILD</span></div><div class="service-copy"><h3>야구장 시공·보수</h3><p>경기장 형태와 이용 목적을 고려한 시공 및 부분 보수</p><span class="service-tag">FIELD CONSTRUCTION</span></div></article>
+          <article class="service"><div class="service-photo"><img src="bgd_photo_infield_soil.jpg" alt="마운드 흙을 레이크로 정비하는 모습"><span class="service-num">02 / SOIL</span></div><div class="service-copy"><h3>흙·마사토 시공</h3><p>배수와 경기감, 유지관리 조건을 살핀 그라운드 정비</p><span class="service-tag">SOIL & MOUNDS</span></div></article>
+          <article class="service"><div class="service-photo"><img src="bgd_photo_natural_turf.jpg" alt="천연잔디를 관리 중인 야구장"><span class="service-num">03 / NATURAL TURF</span></div><div class="service-copy"><h3>천연잔디 관리</h3><p>잔디 상태와 계절에 맞춘 관리 및 손상 구간 보수</p><span class="service-tag">NATURAL TURF CARE</span></div></article>
+          <article class="service"><div class="service-photo"><img src="bgd_photo_artificial_turf.jpg" alt="인조잔디 이음매를 맞춰 시공하는 모습"><span class="service-num">04 / ARTIFICIAL TURF</span></div><div class="service-copy"><h3>인조잔디 시공</h3><p>사용 환경과 기층 상태를 고려한 인조잔디 시공</p><span class="service-tag">ARTIFICIAL TURF</span></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="experience" id="experience">
+      <div class="wrap experience-layout">
+        <div class="experience-copy"><div class="section-kicker">Field experience</div><h2>경기의 흐름과<br>관리의 디테일을<br>함께 생각합니다.</h2><p>프로야구 구장 관리 경험을 바탕으로, 학교 야구장의 흙과 잔디 시공·보수까지 현장별 조건에 맞춰 살핍니다.</p><div class="experience-note"><b>↗</b><span>한화이글스 구장 관리 경험<br>시공 가능 범위와 세부 실적은 공개 전 확인이 필요합니다.</span></div></div>
+        <div class="case-stack">
+          <article class="case"><span class="case-no">01</span><div class="case-art"><img src="bgd_case_school_field.jpg" alt="학교 야구장 현장을 담은 시안 사진"></div><div class="case-text"><span>School baseball field</span><strong>학교 야구장 시공·보수</strong></div></article>
+          <article class="case"><span class="case-no">02</span><div class="case-art"><img src="bgd_case_pro_field.jpg" alt="정돈된 프로야구 구장을 담은 시안 사진"></div><div class="case-text"><span>Professional field care</span><strong>프로야구 구장 관리 경험</strong></div></article>
+          <p class="photo-note">사진은 디자인 시안용 이미지입니다. 실제 BGD 시공·관리 현장 사진으로 교체할 수 있습니다.</p>
+        </div>
+      </div>
+    </section>
+    <section class="method" id="method">
+      <div class="wrap">
+        <div class="section-head"><div><div class="section-kicker">How we work</div><h2>현장을 보고, 맞는 방법으로.</h2></div><p class="section-intro">상담에서 유지관리까지 진행 흐름을 투명하게 공유합니다. 현장 상황과 요청 범위에 따라 세부 과정은 달라질 수 있습니다.</p></div>
+        <div class="steps">
+          <article class="step"><div class="step-photo"><img src="bgd_work_inspection.jpg" alt="현장 담당자가 체크리스트에 항목을 표시하며 구장을 살피는 모습"><span class="step-no">01</span></div><div class="step-copy"><small>ON-SITE CONSULTATION</small><h3>현장 상담</h3><p>그라운드 상태와 배수·잔디 경계를 하나씩 확인하고 체크리스트에 기록합니다.</p></div></article>
+          <article class="step"><div class="step-photo"><img src="bgd_work_measure_plan.jpg" alt="구장 크기를 줄자로 측정하며 계획을 세우는 모습"><span class="step-no">02</span></div><div class="step-copy"><small>MEASURE &amp; PLAN</small><h3>사이즈 측정 및 계획</h3><p>구장 크기와 필요한 공정을 측정하고 현장에 맞는 작업 계획을 세웁니다.</p></div></article>
+          <article class="step"><div class="step-photo"><img src="bgd_work_construction.jpg" alt="야구장 흙을 고르고 다지며 시공·보수하는 모습"><span class="step-no">03</span></div><div class="step-copy"><small>BUILD &amp; REPAIR</small><h3>시공·보수</h3><p>계획한 공정을 진행하고 흙과 잔디의 마감 상태를 살핍니다.</p></div></article>
+          <article class="step"><div class="step-photo"><img src="bgd_work_maintenance.jpg" alt="잔디를 정기적으로 관리하는 구장 정비 장비"><span class="step-no">04</span></div><div class="step-copy"><small>FIELD CARE</small><h3>관리</h3><p>시공 후에도 잔디와 그라운드 상태를 살펴 경기장 컨디션을 관리합니다.</p></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="cta" id="contact"><div class="wrap cta-box"><div class="cta-copy"><span>Let's talk about your field</span><h2>그라운드에 필요한 일을<br>함께 살펴보겠습니다.</h2><p>현장 위치와 필요한 작업, 희망 일정을 알려주시면 상담 범위를 안내드립니다.</p></div><a class="button" href="#services">시공·관리 분야 보기 <span class="arrow">↗</span></a></div></section>
+  </main>
+  <footer><div class="wrap foot"><a class="brand" href="#top" aria-label="BGD SPORTS 홈"><img class="brand-logo brand-logo-light" src="bgd_logo_light.png" alt="BGD SPORTS"></a><span>야구장 시공 · 보수 · 유지관리</span><span class="footnote">© BGD SPORTS · HOMEPAGE CONCEPT</span></div></footer>
+</body>
+</html>
